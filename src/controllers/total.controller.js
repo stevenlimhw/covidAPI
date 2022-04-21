@@ -4,13 +4,13 @@ const fetchData = require('../middlewares/fetch')
 const totalController = async (req, res) => {
     try {
         // fetch data from the web API
-        const data = (await fetchData()).total
+        const data = await fetchData()
 
         // date that the data is fetched on
-        const date = data.tanggal
+        const date = data.penambahan.tanggal
 
         // save penambahan (i.e. daily or additional) into the database
-        Total.create(data, (err, total) => {
+        Total.create({ ...data.total, tanggal_update: date }, (err, total) => {
             if (err) {
                 console.error(err)
                 throw err
@@ -19,8 +19,9 @@ const totalController = async (req, res) => {
         })
 
         // provide JSON object as the response
+        // TODO: Fix Bug - tanggal_update not appearing as part of the response.
         res.json({ total: {
-                ...data,
+                ...data.total,
                 tanggal_update: date
             }
         })

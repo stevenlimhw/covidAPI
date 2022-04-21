@@ -10,8 +10,8 @@ const app = express()
 connectDB()
 
 // initialise the APIs
-app.use("/api", dailyRouter)
-app.use("/api", totalRouter)
+app.use("/daily_api", dailyRouter)
+app.use("/total_api", totalRouter)
 
 // schedule API
 

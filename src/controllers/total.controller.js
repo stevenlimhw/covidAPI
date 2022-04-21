@@ -1,7 +1,8 @@
 const Total = require('../models/Total')
 const fetchData = require('../middlewares/fetch')
 
-const totalController = async (req, res) => {
+/* Creates a Total object and saves it into the database. */
+const createTotal = async (req, res) => {
     try {
         // fetch data from the web API
         const data = await fetchData()
@@ -19,7 +20,6 @@ const totalController = async (req, res) => {
         })
 
         // provide JSON object as the response
-        // TODO: Fix Bug - tanggal_update not appearing as part of the response.
         res.json({ total: {
                 ...data.total,
                 tanggal_update: date
@@ -31,4 +31,4 @@ const totalController = async (req, res) => {
     }
 }
 
-module.exports = totalController
+module.exports = createTotal

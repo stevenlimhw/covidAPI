@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const db = 'mongodb://localhost:27017/covidAPI'
+const { db } = require('../utils/strings')
 
 /**
  * Asynchronous function to connect to the database.

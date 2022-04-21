@@ -1,7 +1,8 @@
 const Daily = require('../models/Daily')
 const fetchData = require('../middlewares/fetch')
 
-const dailyController = async (req, res) => {
+/* Creates a Daily object and saves it into the database. */
+const createDaily = async (req, res) => {
     try {
         // fetch data from the web API
         const data = (await fetchData()).penambahan
@@ -26,4 +27,4 @@ const dailyController = async (req, res) => {
     }
 }
 
-module.exports = dailyController
+module.exports = createDaily

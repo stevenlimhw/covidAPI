@@ -1,5 +1,5 @@
 const axios = require('axios')
-const url = "https://data.covid19.go.id/public/api/update.json"
+const { url } = require('../utils/strings')
 
 /**
  * Function to fetch the data from the web API using axios.

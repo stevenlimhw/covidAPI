@@ -6,6 +6,7 @@ Features:
 - This API is automatically executed by the scheduler at 11 59 PM daily.
 
 Tools used:
+- NodeJS
 - ExpressJS
 - MongoDB
 - Mongoose

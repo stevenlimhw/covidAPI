@@ -7,6 +7,6 @@ const router = express.Router()
  * Router will invoke dailyController when POST request
  * is received from the client.
  */
-router.post('/', dailyController)
+router.post("/", dailyController)
 
 module.exports = router

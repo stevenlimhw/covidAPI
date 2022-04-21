@@ -1,8 +1,7 @@
 const express = require('express')
 const totalController = require('../controllers/total.controller')
-const router = require('./daily.route')
 
-router = express.Router()
+const router = express.Router()
 
 /**
  * Router will invoke totalController when POST request

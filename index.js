@@ -6,13 +6,15 @@ const connectDB = require('./src/configs/db')
 const PORT = 3000
 const app = express()
 
-// initialise database
+// initialise and connect to the database
+connectDB()
 
-// launch API
+// initialise the APIs
 app.use("/api", dailyRouter)
 app.use("/api", totalRouter)
 
 // schedule API
+
 
 // listener
 app.listen(PORT, console.log(`Server is currently running in port ${PORT}`))

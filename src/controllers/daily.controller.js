@@ -4,7 +4,7 @@ const fetchData = require('../middlewares/fetch')
 const dailyController = async (req, res) => {
     try {
         // fetch data from the web API
-        const data = await fetchData().penambahan
+        const data = (await fetchData()).penambahan
 
         // date that the data is fetched on
         const date = data.tanggal
@@ -20,7 +20,7 @@ const dailyController = async (req, res) => {
 
         // provide JSON object as the response
         res.json({ daily: data })
-        
+
     } catch (err) {
         res.json({ message: err.message })
     }

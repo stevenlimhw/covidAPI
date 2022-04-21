@@ -4,7 +4,7 @@ const fetchData = require('../middlewares/fetch')
 const totalController = async (req, res) => {
     try {
         // fetch data from the web API
-        const data = await fetchData().total
+        const data = (await fetchData()).total
 
         // date that the data is fetched on
         const date = data.tanggal
@@ -24,7 +24,7 @@ const totalController = async (req, res) => {
                 tanggal_update: date
             }
         })
-        
+
     } catch (err) {
         res.json({ message: err.message })
     }
